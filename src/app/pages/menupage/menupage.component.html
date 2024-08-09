@@ -1,0 +1,37 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="foodBox mt-3 mb-3">
+                <a href="menu" class="btn btn-sm btn-dark mb-3">Back</a>
+                <img src="{{menuItem[0].foodImg}}" height="100" width="100"/>
+                <h1 class="mt-3">{{menuItem[0].foodName}}</h1>
+                <p>{{menuItem[0].foodDetails}}</p>
+                <p>Rs.{{menuItem[0].foodPrice}}</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <h1>Enter Your Details</h1>
+    <form [formGroup]="orderForm">
+        <div class="mt-2">
+            <label class="mb-2">Full Name<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" placeholder="Enter your Full Name" formControlName="full_name"/>
+            <p class="text-danger f-12" *ngIf="submitted && orderForm.get('full_name')?.invalid">Please Enter the Name</p>
+        </div>
+        <div class="mt-2">
+            <label class="mb-2">Mobile Number<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" placeholder="Enter your Mobile Number" formControlName="mobile_number"/>
+            <p class="text-danger f-12" *ngIf="submitted && orderForm.get('mobile_number')?.invalid ">Please Enter Mobile Number</p>
+        </div>
+        <div class="mt-2">
+            <label class="mb-2">Address <span class="text-danger">*</span></label>
+            <textarea class="form-control" placeholder="Enter Your Address" formControlName="address"></textarea>
+            <p class="text-danger f-12" *ngIf="submitted && orderForm.get('address')?.invalid">Please Enter Your Address</p>
+        </div>
+        <div class="mt-2">
+            <button class="btn btn-md btn-dark mt-3" (click)="submit()">Place Order</button>
+        </div>
+    </form>
+        </div>
+    </div>
+</div>

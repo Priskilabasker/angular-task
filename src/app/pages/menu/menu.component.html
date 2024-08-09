@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        @for(item of menuList;track item.id){
+
+<div class="col-lg-4">
+    <div class="foodBox mt-3 mb-3">
+        <img src="{{item.foodImg}}" />
+        <h1>{{item.foodName}}</h1>
+        <p>{{(item.foodDetails)}}</p>
+        <p>Rs.{{item.foodPrice}}</p>
+        <br>
+        <a class="buybtn" href="/menu/{{item.id}}">Buy Now &nbsp;<i class="bi bi-bag"></i></a>
+    </div>
+</div>
+
+        }
+    </div>
+</div>
